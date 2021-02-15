@@ -1,21 +1,15 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 
+import '@styles/main.scss';
+
+import App from '@pages/Home';
+
 const container = document.querySelector('#app');
-
-let arr = ['Хорошо ','Отлично ','Плохо '];
-
-document.querySelector('.btn').onclick = () => {
-    arr.push('Нормально ');
-    ReactDom.render(
-        <div>
-            { arr }
-        </div>
-        , container);
-}
 
 ReactDom.render(
     <div>
-        { arr }
-    </div>
-    , container);
+        <App />
+    </div>,
+    container
+);
