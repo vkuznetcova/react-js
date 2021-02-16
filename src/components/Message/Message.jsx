@@ -10,11 +10,9 @@ import './style.scss';
 
 export default props => {
     const { name, text } = props;
-    // const name=props.name;
-    // const text=props.text;
 
-    return <div>
-        <p><b>{ name }</b></p>
-        <p>{ text }</p>
+    return <div className='message'>
+        <span className="message-name">{ name }</span>
+        <p className="message-txt">{ text }</p>
     </div>;
 }
