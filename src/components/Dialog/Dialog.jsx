@@ -23,6 +23,7 @@ function SimpleDialog(props) {
   };
 
   const handleListItemClick = (value) => {
+    props.addChat(value);
     onClose(value);
   };
 
@@ -56,7 +57,7 @@ SimpleDialog.propTypes = {
   selectedValue: PropTypes.string.isRequired,
 };
 
-export default function SimpleDialogDemo() {
+export default function SimpleDialogDemo(props) {
   const [open, setOpen] = React.useState(false);
   const [selectedValue, setSelectedValue] = React.useState(emails[1]);
 
@@ -71,11 +72,10 @@ export default function SimpleDialogDemo() {
 
   return (
         <div className="dialog">
-                {/* Selected: {selectedValue} */}
           <Button variant="outlined" color="primary" onClick={ handleClickOpen }>
                 add user
           </Button>
-             <SimpleDialog selectedValue= { selectedValue } open={ open } onClose={ handleClose } />
+             <SimpleDialog selectedValue= { selectedValue } open={ open } onClose={ handleClose } addChat={ props.add }/>
         </div>
   );
 }
